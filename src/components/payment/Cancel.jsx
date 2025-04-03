@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { FaCheckCircle } from "react-icons/fa";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
