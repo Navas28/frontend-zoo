@@ -12,8 +12,6 @@ import "animate.css";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import Booking from "./components/Booking";
-import Success from "./components/payment/Success";
-import Cancel from "./components/payment/Cancel";
 import ContactForm from "./components/ContactForm";
 import BookingHour from "./components/BookingHour";
 import Footer from "./components/Footer";
@@ -22,7 +20,6 @@ import AnimalDetail from "./components/pages/AnimalDetail";
 import Blog from "./components/pages/Blog";
 import BlogDetails from "./components/pages/BlogDetails";
 import Volunteer from "./components/pages/Volunteer";
-import VolunteerHead from "./components/pages/VolunteerHead";
 import Events from "./components/pages/Events";
 import Donation from "./components/pages/Donation";
 import EventRegistration from "./components/pages/EventRegistration";
@@ -126,8 +123,6 @@ const App = () => {
                         </>
                     }
                 />
-                <Route path="/success" element={<Success />} />
-                <Route path="/cancel" element={<Cancel />} />
             </Routes>
         </Router>
     );

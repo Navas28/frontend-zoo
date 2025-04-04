@@ -48,7 +48,7 @@ const Donation = () => {
     };
 
     return (
-        <div className="mt-7 p-6 flex justify-center items-center min-h-screen">
+        <div className="mt-15 p-6 flex justify-center items-center min-h-screen">
             <div className="w-full max-w-md rounded-xl shadow-xl overflow-hidden border-2 border-gray-100">
                 <div className="relative">
                     <div className="absolute inset-0 border-b-2 border-white"></div>
