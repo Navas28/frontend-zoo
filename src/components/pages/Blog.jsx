@@ -4,14 +4,29 @@ import axios from "axios";
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios
             .get("https://backend-zoo.onrender.com/blogs")
-            .then((res) => setBlogs(res.data))
-            .catch((err) => console.error("Error fetching blogs:", err));
+            .then((res) => {
+                setBlogs(res.data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.error("Error fetching blogs:", err);
+                setLoading(false);
+            });
     }, []);
 
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-[50vh]">
+                <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+        );
+    }
+    
     return (
         <div className="p-6 mt-28">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
