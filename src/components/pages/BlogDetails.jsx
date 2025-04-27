@@ -12,9 +12,13 @@ const BlogDetails = () => {
             .then((res) => setBlog(res.data))
             .catch((err) => console.error("Error fetching blog details:", err));
     }, [id]);
-
-    if (!blog) return <p className="text-center text-white">Loading...</p>;
-
+    if (!blog) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <p className="text-center text-white text-lg">Loading...</p>
+            </div>
+        );
+    }
     return (
         <div className="container mx-auto px-4 py-8 max-w-8xl mt-28">
             <div className="w-full shadow-lg rounded-lg overflow-hidden border-2 border-white">
