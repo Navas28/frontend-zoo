@@ -4,13 +4,28 @@ import { Link } from "react-router-dom";
 
 const RedList = () => {
     const [threatenedAnimals, setThreatenedAnimals] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios
             .get("https://backend-zoo.onrender.com/animals")
-            .then((response) => setThreatenedAnimals(response.data)) 
-            .catch((error) => console.error("Error fetching animals:", error));
+            .then((response) => {
+                setThreatenedAnimals(response.data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching animals:", error);
+                setLoading(false);
+            });
     }, []);
+
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-[50vh]">
+                <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+            </div>
+        );
+    }
 
     return (
         <div className="grid sm:grid-cols-2  md:grid-cols-3  xl:grid-cols-4  gap-5 px-8 mt-28 mb-5">

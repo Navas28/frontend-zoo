@@ -25,7 +25,7 @@ const AnimalDetail = () => {
         fetchAnimalDetails();
     }, [id]);
 
-    if (!animal) return null;
+    if (!animal) return <p className="text-center text-white">Loading...</p>;
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-8xl mt-28">

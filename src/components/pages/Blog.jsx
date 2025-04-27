@@ -22,11 +22,11 @@ const Blog = () => {
     if (loading) {
         return (
             <div className="flex justify-center items-center h-[50vh]">
-                <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
             </div>
         );
     }
-    
+
     return (
         <div className="p-6 mt-28">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

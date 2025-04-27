@@ -13,7 +13,7 @@ const BlogDetails = () => {
             .catch((err) => console.error("Error fetching blog details:", err));
     }, [id]);
 
-    if (!blog) return <p className="text-center text-gray-500">Loading...</p>;
+    if (!blog) return <p className="text-center text-white">Loading...</p>;
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-8xl mt-28">
